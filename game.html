@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Rock Paper Scissors</h1>
+  <div class="game-container">
+    <button class="rock" id="rock">Rock</button>
+    <button class="paper" id="paper">Paper</button>
+    <button class="scissors" id="scissors">Scissors</button>
+    <div class="result"></div>
+  </div>
+
+  <script>
+    const rockButton = document.getElementById('rock');
+const paperButton = document.getElementById('paper');
+const scissorsButton = document.getElementById('scissors');
+const resultDiv = document.querySelector('.result');
+
+let computerChoice;
+
+function getComputerChoice() {
+  const choices = ['rock', 'paper', 'scissors'];
+  computerChoice = choices[Math.floor(Math.random() * choices.length)];
+}
+
+function playRound(playerChoice) {
+  getComputerChoice();
+  let result;
+
+  if (playerChoice === computerChoice) {
+    result = 'Tie!';
+  } else if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
+             (playerChoice === 'paper' && computerChoice === 'rock') ||
+             (playerChoice === 'scissors' && computerChoice === 'paper')) {
+    result = 'You win!';
+  } else {
+    result = 'Computer wins haha!';
+  }
+
+  resultDiv.textContent = `You chose ${playerChoice}, computer chose ${computerChoice}. ${result}`;
+}
+
+rockButton.addEventListener('click', () => playRound('rock'));
+paperButton.addEventListener('click', () => playRound('paper'));
+scissorsButton.addEventListener('click', () => playRound('scissors'));
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+.game-container {
+    text-align: center;
+    margin: 20px auto;
+  }
+  
+  button {
+    font-size: 24px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .rock {
+    background-color: #FFC080;
+  }
+  
+  .paper {
+    background-color: #C6E2B5;
+  }
+  
+  .scissors {
+    background-color: #87CEEB;
+  }
+  
+  .result {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
